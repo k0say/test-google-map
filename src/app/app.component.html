@@ -5,14 +5,13 @@
             [options]="googleOptions"
             >
   <map-marker-clusterer #cluster (clusterClick)="openInfoCard($event)"
-  [options]=""
   [clusterClass]="clusterClass"
   [styles]="clusterStyles"
   [minimumClusterSize]="10"
   >
     <map-marker 
       #marker *ngFor="let marker of markers" (mapClick)="test(marker)"
-      [position]="marker?.position">
+      [position]="marker?.position" [options]="marker">
     </map-marker>
   </map-marker-clusterer>
 </google-map>
